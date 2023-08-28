@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "commonjs",
+    "target": "es2022",
+    "outDir": "dist",
+    "baseUrl": ".",
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "removeComments": false,
+    "declaration": true,
+    "allowJs": false
+  },
+  "include": [
+    "src"
+  ]
+}
