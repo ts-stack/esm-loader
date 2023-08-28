@@ -4,6 +4,7 @@
 yarn.*
 jest.*
 .*
+package-lock.json
 nodemon.json
 CHANGELOG.md
 *.tsbuildinfo
