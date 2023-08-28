@@ -36,13 +36,8 @@ export function getModuleNameMap(moduleNameMapper?: ModuleNameMapper, rootDir: s
 
 export function resolveAlias(moduleNameMap: ModuleNameMap, specifier: string) {
   for (const [alias, origin] of moduleNameMap) {
-    const execArr = alias.exec(specifier);
-    if (execArr) {
-      const result = execArr.slice(1).reduce((result, replaceValue, i) => {
-        const searchValue = '$' + (i + 1);
-        return result.replaceAll(searchValue, replaceValue);
-      }, origin);
-
+    if (alias.test(specifier)) {
+      const result = specifier.replace(alias, origin);
       return /\.(?:c|m)?js$/.test(result) ? result : `${result}/index.js`;
     }
   }
